@@ -1,12 +1,4 @@
 <% @cocktails.each do |cocktail| %>
-  <h3><%= cocktail.name %></h3>
-  <p>Ingredients: </p>
-  <ul>
-    <% cocktail.doses.all.each do |dose| %>
-      <% quantity = dose.description %>
-      <% ingredient = dose.ingredient.name %>
-      <li><%= "#{quantity} #{ingredient}" %></li>
-    <% end %>
-  </ul>
+  <h3><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
   <hr>
 <% end %>
