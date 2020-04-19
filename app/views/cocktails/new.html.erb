@@ -1,0 +1,15 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <ul>
+  <%= f.nested_fields_for :doses do |dose_form| %>
+    <li>
+      <%= dose_form.input :description %>
+      <%= f.association :ingredients %>
+    </li>
+  <% end %>
+  </ul>
+  <%= f.add_nested_fields_link :doses do %>
+    <span>New dose</span>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>
