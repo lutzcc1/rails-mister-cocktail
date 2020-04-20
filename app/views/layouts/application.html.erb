@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
-    <%= yield %>
+    <%= render "layouts/parcials/navbar" %>
+    <div class="page-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

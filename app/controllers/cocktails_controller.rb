@@ -16,6 +16,7 @@ class CocktailsController < ApplicationController
   def create
     # why I'm i getting empty elements in the :ingredient_ids string?
     params[:cocktail][:ingredient_ids].reject!(&:empty?)
+    params[:cocktail][:name] = params[:cocktail][:name].downcase.titleize
 
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save

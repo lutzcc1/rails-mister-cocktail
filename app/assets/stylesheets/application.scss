@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$black: #000000;
+$blue: #14213D;
+$orange: #FCA311;
+$platinum: #E5E5E5;
+$white: #FFFFFF;
+
+body {
+  background-color: $platinum;
+}
+
+.page-container {
+  width: 700px;
+  margin: 0 auto;
+}
