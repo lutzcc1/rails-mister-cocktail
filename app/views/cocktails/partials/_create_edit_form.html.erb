@@ -1,0 +1,10 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.nested_fields_for :doses do |dose| %>
+    <%= render '/cocktails/partials/doses_fields', f: dose %>
+  <% end %>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to_add_association 'add dose', f, :doses, partial: '/cocktails/partials/doses_fields', class: "btn btn-secondary" %>
+    <%= f.button :submit, class: "btn btn-secondary" %>
+  </div>
+<% end %>
