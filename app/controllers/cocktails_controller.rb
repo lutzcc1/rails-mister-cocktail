@@ -1,6 +1,5 @@
-require "byebug"
 class CocktailsController < ApplicationController
-  before_action :set_task, only: %i[show edit update]
+  before_action :set_cocktail, only: %i[show edit update]
 
   def index
     @cocktails = Cocktail.all
@@ -15,36 +14,40 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-    add_doses
-    redirect_to cocktails_path
+    if @cocktail.save
+      redirect_to cocktails_path
+    else
+      render :new
+    end
   end
 
   def edit; end
 
   def update
-    @cocktail.update(cocktail_params)
-    add_doses
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :edit
+    end
   end
 
   private
 
-  def set_task
+  def set_cocktail
     @cocktail = Cocktail.find(params[:id])
   end
 
   def cocktail_params
     params[:cocktail][:name] = params[:cocktail][:name].downcase.titleize
-    params.require(:cocktail).permit(:name)
-  end
-
-  def add_doses
-    @cocktail.doses.destroy_all
-    # missing _destroy
-    strong_params = params.require(:cocktail).permit(doses_attributes: [:description, :ingredient_id])
-    params[:cocktail][:doses_attributes].each_key do |key|
-      @cocktail.doses.create(strong_params[:doses_attributes][key])
-    end
+    params.require(:cocktail)
+          .permit(
+            :name,
+            doses_attributes: [
+              :id,
+              :_destroy,
+              :description,
+              :ingredient_id
+            ]
+          )
   end
 end

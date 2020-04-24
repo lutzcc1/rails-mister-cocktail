@@ -3,7 +3,5 @@ class Cocktail < ApplicationRecord
 
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
-  accepts_nested_attributes_for :doses
+  accepts_nested_attributes_for :doses, allow_destroy: true
 end
-
-# cocktail.doses.create(ingredient: ingredient, description: "A lot!")
