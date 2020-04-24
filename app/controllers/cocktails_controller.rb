@@ -1,4 +1,4 @@
-
+require "byebug"
 class CocktailsController < ApplicationController
   before_action :set_task, only: %i[show edit update]
 
@@ -35,19 +35,16 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    # why I'm i getting empty elements in the :ingredient_ids string
-    params[:cocktail][:ingredient_ids].reject!(&:empty?)
     params[:cocktail][:name] = params[:cocktail][:name].downcase.titleize
-    params.require(:cocktail).permit(:name, :doses_attributes, :ingredient_ids)
+    params.require(:cocktail).permit(:name)
   end
 
   def add_doses
-     # why I'm i getting empty elements in the :ingredient_ids string
     @cocktail.doses.destroy_all
-    ingredient_list = params[:cocktail][:ingredient_ids]
-    ingredient_list.each_with_index do |ingredient, num_of_description|
-      dose_description = params[:cocktail][:doses_attributes][num_of_description.to_s.to_sym][:description]
-      @cocktail.doses.create!(description: dose_description, ingredient_id: ingredient)
+    # missing _destroy
+    strong_params = params.require(:cocktail).permit(doses_attributes: [:description, :ingredient_id])
+    params[:cocktail][:doses_attributes].each_key do |key|
+      @cocktail.doses.create(strong_params[:doses_attributes][key])
     end
   end
 end
