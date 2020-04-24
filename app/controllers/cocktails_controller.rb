@@ -10,11 +10,10 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
-    3.times { @cocktail.doses.build }
+    @cocktail.doses.build
   end
 
   def create
-    # byebug
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save
     add_doses

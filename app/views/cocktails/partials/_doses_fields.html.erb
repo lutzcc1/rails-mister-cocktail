@@ -2,6 +2,6 @@
   <div class="field">
     <%= f.text_field :description %>
   </div>
-    <!--f.association :ingredients-->
+    <%= f.association :ingredient, collection: Ingredient.all %>
     <%= link_to_remove_association "remove dose", f %>
 </div>
