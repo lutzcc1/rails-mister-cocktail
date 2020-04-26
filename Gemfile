@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'nested_form_fields'
 gem 'jquery-rails'
 gem 'cocoon'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
