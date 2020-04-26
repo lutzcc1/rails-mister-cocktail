@@ -1,0 +1,23 @@
+.cocktail-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+  margin: 16px;
+}
+
+.cocktail-card .big-name {
+  margin: 16px 0;
+}
+
+.cocktail-card a {
+  color: black;
+  transition-duration: 0.6s;
+  transition-delay: 0.2s
+}
+
+.cocktail-card a:hover {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}

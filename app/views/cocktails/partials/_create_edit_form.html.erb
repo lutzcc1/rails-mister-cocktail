@@ -1,5 +1,6 @@
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name, required: true %>
+  <%= f.input :image, as: :file %>
   <%= f.nested_fields_for :doses do |dose| %>
     <%= render '/cocktails/partials/doses_fields', f: dose %>
   <% end %>

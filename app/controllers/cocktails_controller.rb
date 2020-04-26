@@ -42,6 +42,7 @@ class CocktailsController < ApplicationController
     params.require(:cocktail)
           .permit(
             :name,
+            :image,
             doses_attributes: [
               :id,
               :_destroy,

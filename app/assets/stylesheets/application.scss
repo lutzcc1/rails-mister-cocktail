@@ -23,6 +23,17 @@ body {
 }
 
 .page-container {
-  width: 700px;
+  width: 850px;
   margin: 0 auto;
+}
+
+.cocktails-container {
+  display: flex;
+  justify-content: center;
+}
+
+#main-title {
+  font-size: 70px;
+  margin: 24px 0px;
+  text-align: center;
 }

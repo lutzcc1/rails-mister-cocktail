@@ -1,4 +1,10 @@
-<% @cocktails.each do |cocktail| %>
-  <h3 class="big-name"><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
-  <hr>
-<% end %>
+<h1 id="main-title">Cocktails</h1>
+<div class="cocktails-container">
+  <% @cocktails.each do |cocktail| %>
+    <div class="cocktail-card">
+      <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.gif') %>
+      <%= cl_image_tag image, width: 220, height: 220 %>
+      <h3 class="big-name"><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
+    </div>
+  <% end %>
+</div>

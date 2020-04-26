@@ -27,10 +27,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'nested_form_fields'
-gem 'jquery-rails'
+gem 'cloudinary', '~> 1.12.0'
 gem 'cocoon'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'jquery-rails'
+gem 'nested_form_fields'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
