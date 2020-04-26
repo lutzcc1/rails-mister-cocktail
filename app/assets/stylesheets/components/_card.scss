@@ -11,13 +11,43 @@
   margin: 16px 0;
 }
 
+.cocktail-description {
+  width: 100%;
+  padding-left: 16px;
+  padding-top: 16px;
+}
 .cocktail-card a {
   color: black;
-  transition-duration: 0.6s;
-  transition-delay: 0.2s
+  transition-duration: 0.5s;
+  transition-delay: 0.1s
 }
 
 .cocktail-card a:hover {
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
+
+.big-cocktail-card {
+  display: flex;
+  width: 550px;
+  margin: 32px auto 0;
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+
+#big-cocktail-card-edit-btn {
+  text-decoration: none;
+  padding: 8px;
+  width: 550px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #2c2b2b;
+  border-radius: 0 0 8px 8px;
+  font-size: 20px;
+}
+
+
