@@ -1,11 +1,19 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name, required: true %>
-  <%= f.input :image, as: :file %>
-  <%= f.nested_fields_for :doses do |dose| %>
-    <%= render '/cocktails/partials/doses_fields', f: dose %>
+<div class="big-form">
+  <%= simple_form_for @cocktail do |f| %>
+    <div class="row">
+      <div class="col">
+        <%= f.input :name, required: true, class: "form-control" %>
+      </div>
+      <div class="col">
+        <%= f.input :image, as: :file, class: "form-control" %>
+      </div>
+    </div>
+      <%= f.nested_fields_for :doses do |dose| %>
+        <%= render '/cocktails/partials/doses_fields', f: dose %>
+      <% end %>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <%= link_to_add_association 'add dose', f, :doses, partial: '/cocktails/partials/doses_fields', class: "btn btn-secondary" %>
+        <%= f.button :submit, class: "btn btn-secondary" %>
+      </div>
   <% end %>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <%= link_to_add_association 'add dose', f, :doses, partial: '/cocktails/partials/doses_fields', class: "btn btn-secondary" %>
-    <%= f.button :submit, class: "btn btn-secondary" %>
-  </div>
-<% end %>
+</div>

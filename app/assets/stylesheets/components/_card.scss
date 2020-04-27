@@ -40,7 +40,6 @@
 
 
 #big-cocktail-card-edit-btn {
-  text-decoration: none;
   padding: 8px;
   width: 550px;
   text-align: center;
@@ -49,5 +48,13 @@
   border-radius: 0 0 8px 8px;
   font-size: 20px;
 }
+
+#big-cocktail-card-edit-btn a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
 
 

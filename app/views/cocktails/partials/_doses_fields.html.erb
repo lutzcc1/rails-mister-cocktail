@@ -1,7 +1,14 @@
-<div class='nested-fields'>
-  <div class="field">
-    <%= f.text_field :description %>
+<div class="ingredients-form">
+  <div class="row nested-fields">
+    <div class="col">
+      <%= f.label :quantity %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="col">
+      <%= f.association :ingredient, collection: Ingredient.all %>
+    </div>
+    <div class="col">
+    <%= link_to_remove_association "X", f, class: "delete-dose-btn"%>
+    </div>
   </div>
-    <%= f.association :ingredient, collection: Ingredient.all %>
-    <%= link_to_remove_association "remove dose", f %>
 </div>
