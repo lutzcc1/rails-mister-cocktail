@@ -23,8 +23,9 @@ require("channels");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-//= require jquery3
-//= require jquery_ujs
 //= require jquery
+//= require jquery_ujs
+//= require jquery3
 //= require jquery_nested_form
 //= require cocoon
+//= require_tree
