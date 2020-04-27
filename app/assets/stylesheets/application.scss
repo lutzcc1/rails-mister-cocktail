@@ -23,13 +23,14 @@ body {
 }
 
 .page-container {
-  width: 850px;
+  width: 1150px;
   margin: 0 auto;
 }
 
 .cocktails-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #main-title {
