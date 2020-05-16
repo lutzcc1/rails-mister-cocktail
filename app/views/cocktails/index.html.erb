@@ -1,10 +1,12 @@
 <h1 id="main-title">Cocktails</h1>
 <div class="cocktails-container">
   <% @cocktails.each do |cocktail| %>
-    <div class="cocktail-card">
-      <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.gif') %>
-      <%= cl_image_tag image, width: 220, height: 220 %>
-      <h3 class="big-name"><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
-    </div>
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="cocktail-card">
+        <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.jpg') %>
+        <%= cl_image_tag image, class: 'cocktail-photo' %>
+        <h3 class="big-name"><%= cocktail.name %></h3>
+      </div>
+    <% end %>
   <% end %>
 </div>

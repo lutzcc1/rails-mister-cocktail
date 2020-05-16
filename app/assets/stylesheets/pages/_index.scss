@@ -1,2 +1,33 @@
 // Import page-specific CSS files here.
-@import "home";
+
+.cocktails-container {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+#main-title {
+  font-size: 70px;
+  margin: 24px 0px;
+  text-align: center;
+}
+
+@media(max-width: 992px) {
+  .cocktails-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 768px) {
+  .cocktails-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 576px) {
+  .cocktails-container{
+    grid-template-columns: 1fr;
+  }
+}
+

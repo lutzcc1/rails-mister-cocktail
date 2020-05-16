@@ -1,14 +1,14 @@
+// index card -----------------------------------
 .cocktail-card {
   background-color: white;
   border-radius: 8px;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   text-align: center;
-  margin: 16px;
 }
 
-.cocktail-card .big-name {
-  margin: 16px 0;
+.cocktails-container > a:hover {
+  text-decoration: none;
 }
 
 .cocktail-description {
@@ -16,17 +16,22 @@
   padding-left: 16px;
   padding-top: 16px;
 }
-.cocktail-card a {
+.cocktail-card > .big-name {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
   color: black;
   transition-duration: 0.5s;
-  transition-delay: 0.1s
-}
-
-.cocktail-card a:hover {
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  transition-delay: 0.1s;
   text-decoration: none;
+  margin: 16px 0;
 }
 
+.cocktail-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+// show card --------------------------------------------
 .big-cocktail-card {
   display: flex;
   width: 550px;

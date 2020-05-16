@@ -21,20 +21,3 @@ $white: #FFFFFF;
 body {
   background-color: $platinum;
 }
-
-.page-container {
-  width: 1150px;
-  margin: 0 auto;
-}
-
-.cocktails-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#main-title {
-  font-size: 70px;
-  margin: 24px 0px;
-  text-align: center;
-}
