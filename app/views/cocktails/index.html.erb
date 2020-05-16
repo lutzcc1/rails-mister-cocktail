@@ -3,7 +3,7 @@
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do %>
       <div class="cocktail-card">
-        <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.gif') %>
+        <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.jpg') %>
         <%= cl_image_tag image, class: 'cocktail-photo' %>
         <h3 class="big-name"><%= cocktail.name %></h3>
       </div>
