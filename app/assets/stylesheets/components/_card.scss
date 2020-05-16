@@ -6,8 +6,12 @@
   text-align: center;
 }
 
-.cocktail-card .big-name {
-  margin: 16px 0;
+.big-name {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.cocktails-container > a:hover {
+  text-decoration: none;
 }
 
 .cocktail-description {
@@ -15,15 +19,12 @@
   padding-left: 16px;
   padding-top: 16px;
 }
-.cocktail-card a {
+.cocktail-card > .big-name {
   color: black;
   transition-duration: 0.5s;
-  transition-delay: 0.1s
-}
-
-.cocktail-card a:hover {
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  transition-delay: 0.1s;
   text-decoration: none;
+  margin: 16px 0;
 }
 
 .big-cocktail-card {
@@ -36,7 +37,6 @@
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
-
 
 #big-cocktail-card-edit-btn {
   padding: 8px;
