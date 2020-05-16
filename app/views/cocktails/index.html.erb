@@ -4,7 +4,7 @@
     <%= link_to cocktail_path(cocktail) do %>
       <div class="cocktail-card">
         <% image = cocktail.image.attached? ? cocktail.image.key : image_path('walama.gif') %>
-        <%= cl_image_tag image, width: 220, height: 220 %>
+        <%= cl_image_tag image, class: 'cocktail-photo' %>
         <h3 class="big-name"><%= cocktail.name %></h3>
       </div>
     <% end %>
