@@ -38,6 +38,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
+    raise
     params[:cocktail][:name] = params[:cocktail][:name].downcase.titleize
     params.require(:cocktail)
           .permit(
